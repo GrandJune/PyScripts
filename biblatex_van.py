@@ -13,8 +13,7 @@ with open("references.bib", "r", encoding="utf-8") as infile:
     reader = infile.readlines()
     for each in reader:
         data.append(each)
-# print(data)
-result = list(data)
+
 for index, each in enumerate(data):
     if "author = " in each:
         print("original string: ", each)
