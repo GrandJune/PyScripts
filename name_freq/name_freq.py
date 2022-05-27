@@ -13,7 +13,7 @@ import sys
 
 class Data():
     def __init__(self, none_value=None):
-        self.url ='https://forebears.io/indonesia/forenames'
+        self.url = 'https://forebears.io/indonesia/forenames'
         self.data = None
         self.none_value = none_value
 

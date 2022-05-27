@@ -5,8 +5,6 @@
 # @Software  : PyCharm
 # Observing PEP 8 coding style
 
-# Transfer the two-word surname into correct format of {von Hippel}
-
 file_name = "references.bib"
 data = []
 with open("references.bib", "r", encoding="utf-8") as infile:
@@ -19,7 +17,7 @@ for index, each in enumerate(data):
         print("original string: ", each)
         each = each.replace("    author = {", "").replace("},\n", "")
         persons = each.split(" and ")
-        print("persons: ", persons)  # ['Franke, Nikolaus', 'Keinz, Peter', 'Klausberger, Katharina']
+        print("persons before: ", persons)  # ['Franke, Nikolaus', 'Keinz, Peter', 'Klausberger, Katharina']
         first_names = [person.split(",")[0] for person in persons]
         second_names = [person.split(",")[1] for person in persons]
         print("first name before", first_names)  # ['Franke', 'Keinz', 'Klausberger']
@@ -31,8 +29,7 @@ for index, each in enumerate(data):
         print("first name after: ", first_names)  # ['Franke', 'Keinz', 'Klausberger']
         persons = [first_name + "," + second_name for first_name, second_name in zip(first_names, second_names)]
         data[index] = "    author = {" + " and ".join(persons) + "},\n"
-        print("person after: ", data[index])
+        print("revised string: ", data[index])
 
-# print("result: ", data)
 with open("references_final.bib", "w", encoding="utf-8") as outfile:
     writer = outfile.writelines(data)
