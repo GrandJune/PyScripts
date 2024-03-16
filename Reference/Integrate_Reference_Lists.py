@@ -55,5 +55,7 @@ def integrate_references(file1_path, file2_path):
 if __name__ == '__main__':
     file_1 = r"C:\Users\workshop\Music\Collective_Innovation.bib"
     file_2 = r"C:\Users\workshop\Music\My_Library.bib"
+    file_3 = r"C:\Users\workshop\Music\System_Relevant.bib"
     # Replace 'file1.bib' and 'file2.bib' with the actual file paths
     integrate_references(file_1, file_2)
+    integrate_references("references.bib", file_3)
