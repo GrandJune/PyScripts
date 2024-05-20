@@ -49,7 +49,7 @@ def integrate_references(file1_path, file2_path):
 
     # Save the integrated references to a new file
     with open('references.bib', 'w', encoding='utf-8') as file:
-        file.write('@' + '\n@'.join(integrated_references))
+        file.write('' + '\n@'.join(integrated_references))
 
 
 if __name__ == '__main__':
