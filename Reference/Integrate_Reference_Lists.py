@@ -59,3 +59,8 @@ if __name__ == '__main__':
     # Replace 'file1.bib' and 'file2.bib' with the actual file paths
     integrate_references(file_1, file_2)
     integrate_references("references.bib", file_3)
+    with open("references.bib", 'r', encoding='utf-8') as file:
+        content = file.read()
+    modified_content = content.replace('@@', '@')
+    with open("references.bib", 'w', encoding='utf-8') as f:
+        f.write(modified_content)
